@@ -1,0 +1,92 @@
+<div class="container-fluid mt-4">
+  <h2 class="mb-4">⚙️ Admin Dashboard</h2>
+  <div class="row g-4 mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary text-white shadow text-center p-3">
+        <h1>{{ totalUsers }}</h1>
+        <p class="mb-0">👥 Total Users</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-success text-white shadow text-center p-3">
+        <h1>{{ totalProducts }}</h1>
+        <p class="mb-0">📦 Total Products</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-warning text-white shadow text-center p-3">
+        <h1>{{ totalOrders }}</h1>
+        <p class="mb-0">📋 Total Orders</p>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card bg-danger text-white shadow text-center p-3">
+        <h1>₹{{ totalRevenue | number: '1.0-0' }}</h1>
+        <p class="mb-0">💰 Revenue</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-md-2">
+      <a routerLink="/admin/products" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">📦</div>
+        <small>Products</small>
+      </a>
+    </div>
+    <div class="col-md-2">
+      <a routerLink="/admin/users" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">👥</div>
+        <small>Users</small>
+      </a>
+    </div>
+    <div class="col-md-2">
+      <a routerLink="/admin/orders" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">📋</div>
+        <small>Orders</small>
+      </a>
+    </div>
+    <div class="col-md-2">
+      <a routerLink="/admin/coupons" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">🎟️</div>
+        <small>Coupons</small>
+      </a>
+    </div>
+    <div class="col-md-2">
+      <a routerLink="/admin/reports" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">📊</div>
+        <small>Reports</small>
+      </a>
+    </div>
+    <div class="col-md-2">
+      <a routerLink="/admin/stock" class="btn btn-outline-dark w-100 py-3">
+        <div class="fs-3">⚠️</div>
+        <small>Stock</small>
+      </a>
+    </div>
+  </div>
+
+  <div class="card border-danger" *ngIf="lowStockProducts.length > 0">
+    <div class="card-header bg-danger text-white">
+      ⚠️ Low Stock Alert — {{ lowStockProducts.length }} products below 10 units
+    </div>
+    <div class="card-body p-0">
+      <table class="table table-sm mb-0">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of lowStockProducts" [class.table-danger]="p.stock === 0">
+            <td>{{ p.name }}</td>
+            <td>
+              <span class="badge bg-danger">{{ p.stock }} left</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

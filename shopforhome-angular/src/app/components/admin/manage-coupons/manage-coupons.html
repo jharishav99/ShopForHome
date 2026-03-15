@@ -1,0 +1,64 @@
+<div class="container mt-4">
+  <h2>🎟️ Manage Coupons</h2>
+  <div class="alert alert-success" *ngIf="message">{{ message }}</div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card shadow">
+        <div class="card-header bg-dark text-white">➕ Create Coupon</div>
+        <div class="card-body">
+          <form [formGroup]="couponForm" (ngSubmit)="onSubmit()">
+            <div class="mb-2">
+              <label class="form-label">Coupon Code</label>
+              <input class="form-control" formControlName="code" placeholder="e.g. SAVE20" />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Discount %</label>
+              <input type="number" class="form-control" formControlName="discountPct" />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Valid From</label>
+              <input type="date" class="form-control" formControlName="validFrom" />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Valid To</label>
+              <input type="date" class="form-control" formControlName="validTo" />
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Create Coupon</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <table class="table table-hover shadow">
+        <thead class="table-dark">
+          <tr>
+            <th>Code</th>
+            <th>Discount</th>
+            <th>Valid From</th>
+            <th>Valid To</th>
+            <th>Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of coupons">
+            <td>
+              <strong>{{ c.code }}</strong>
+            </td>
+            <td>{{ c.discountPct }}%</td>
+            <td>{{ c.validFrom | date: 'shortDate' }}</td>
+            <td>{{ c.validTo | date: 'shortDate' }}</td>
+            <td>
+              <span
+                class="badge"
+                [class.bg-success]="c.isActive"
+                [class.bg-secondary]="!c.isActive"
+              >
+                {{ c.isActive ? 'Active' : 'Inactive' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
