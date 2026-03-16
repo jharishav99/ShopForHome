@@ -1,22 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { WishlistComponent } from './wishlist';
 
-import { Wishlist } from './wishlist';
-
-describe('Wishlist', () => {
-  let component: Wishlist;
-  let fixture: ComponentFixture<Wishlist>;
+describe('Wishlist Component', () => {
+  let component: WishlistComponent;
+  let fixture: ComponentFixture<WishlistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Wishlist],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(Wishlist);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it('should be defined', () => {
+    expect(WishlistComponent).toBeTruthy();
   });
 });

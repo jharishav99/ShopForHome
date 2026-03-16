@@ -14,7 +14,24 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {
     const stored = localStorage.getItem('auth');
-    if (stored) this.currentUserSubject.next(JSON.parse(stored));
+    if (stored) {
+      const auth = JSON.parse(stored);
+      if (this.isTokenExpired(auth.token)) {
+        localStorage.removeItem('auth');
+        localStorage.removeItem('token');
+      } else {
+        this.currentUserSubject.next(auth);
+      }
+    }
+  }
+
+  private isTokenExpired(token: string): boolean {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return (payload.exp * 1000) < Date.now();
+    } catch {
+      return true;
+    }
   }
 
   login(model: LoginModel): Observable<AuthResponse> {
@@ -39,7 +56,12 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    if (token && this.isTokenExpired(token)) {
+      this.logout();
+      return null;
+    }
+    return token;
   }
 
   isLoggedIn(): boolean {

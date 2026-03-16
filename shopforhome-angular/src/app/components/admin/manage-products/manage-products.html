@@ -1,1 +1,369 @@
-<p>manage-products works!</p>
+<div class="container-fluid mt-4">
+  <h4 class="mb-4 fw-semibold">Manage Products</h4>
+
+  <div
+    class="alert py-2"
+    [class.alert-success]="messageType === 'success'"
+    [class.alert-danger]="messageType === 'danger'"
+    *ngIf="message"
+  >
+    {{ message }}
+  </div>
+
+  <div class="row g-4">
+    <!-- Left Panel -->
+    <div class="col-md-4">
+      <!-- Product Form -->
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-header bg-dark text-white fw-semibold">
+          {{ editMode ? 'Edit Product' : 'Add New Product' }}
+        </div>
+        <div class="card-body">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="mb-2">
+              <label class="form-label small fw-semibold">Name *</label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="name"
+                [class.is-invalid]="
+                  productForm.get('name')?.invalid && productForm.get('name')?.touched
+                "
+                placeholder="Product name"
+              />
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label small fw-semibold">Description *</label>
+              <textarea
+                class="form-control form-control-sm"
+                formControlName="description"
+                rows="2"
+                placeholder="Product description"
+                [class.is-invalid]="
+                  productForm.get('description')?.invalid && productForm.get('description')?.touched
+                "
+              >
+              </textarea>
+              <div class="invalid-feedback">Description is required.</div>
+            </div>
+
+            <div class="row g-2 mb-2">
+              <div class="col-6">
+                <label class="form-label small fw-semibold">Price (₹) *</label>
+                <input
+                  type="number"
+                  class="form-control form-control-sm"
+                  formControlName="price"
+                  min="1"
+                  [class.is-invalid]="
+                    productForm.get('price')?.invalid && productForm.get('price')?.touched
+                  "
+                />
+                <div class="invalid-feedback">Min ₹1.</div>
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-semibold">Stock *</label>
+                <input
+                  type="number"
+                  class="form-control form-control-sm"
+                  formControlName="stock"
+                  min="0"
+                  [class.is-invalid]="
+                    productForm.get('stock')?.invalid && productForm.get('stock')?.touched
+                  "
+                />
+                <div class="invalid-feedback">Required.</div>
+              </div>
+            </div>
+
+            <div class="mb-2">
+              <label class="form-label small fw-semibold">Rating (0–5)</label>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                formControlName="rating"
+                min="0"
+                max="5"
+                step="0.1"
+              />
+            </div>
+
+            <!-- Image Section -->
+            <div class="mb-2">
+              <label class="form-label small fw-semibold">Product Image</label>
+
+              <!-- Image Preview -->
+              <div class="mb-2" *ngIf="imagePreview">
+                <img
+                  [src]="imagePreview"
+                  style="
+                    width: 100%;
+                    height: 120px;
+                    object-fit: cover;
+                    border-radius: 6px;
+                    border: 1px solid #dee2e6;
+                  "
+                  onerror="this.src = 'https://placehold.co/300x120?text=Invalid+URL'"
+                />
+              </div>
+
+              <!-- URL Input -->
+              <input
+                class="form-control form-control-sm mb-1"
+                formControlName="imageUrl"
+                placeholder="Paste image URL (https://...)"
+              />
+              <small class="text-muted d-block mb-2">
+                Paste a URL above — or upload a file below
+              </small>
+
+              <!-- File Upload -->
+              <div class="input-group input-group-sm">
+                <input
+                  type="file"
+                  class="form-control form-control-sm"
+                  accept="image/*"
+                  (change)="uploadImage($event)"
+                />
+              </div>
+              <div class="text-muted small mt-1" *ngIf="uploadingImage">Uploading image...</div>
+
+              <!-- Suggested free image URLs -->
+              <div class="mt-2">
+                <small class="text-muted fw-semibold">Quick image URLs:</small><br />
+                <small class="text-muted">
+                  Chair:
+                  <span
+                    class="text-primary"
+                    style="cursor: pointer; font-size: 10px"
+                    (click)="
+                      productForm.patchValue({
+                        imageUrl:
+                          'https://images.unsplash.com/photo-1519947486511-46149fa0a254?w=400',
+                      })
+                    "
+                  >
+                    Click to use </span
+                  ><br />
+                  Table:
+                  <span
+                    class="text-primary"
+                    style="cursor: pointer; font-size: 10px"
+                    (click)="
+                      productForm.patchValue({
+                        imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400',
+                      })
+                    "
+                  >
+                    Click to use </span
+                  ><br />
+                  Lamp:
+                  <span
+                    class="text-primary"
+                    style="cursor: pointer; font-size: 10px"
+                    (click)="
+                      productForm.patchValue({
+                        imageUrl:
+                          'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400',
+                      })
+                    "
+                  >
+                    Click to use </span
+                  ><br />
+                  Sofa:
+                  <span
+                    class="text-primary"
+                    style="cursor: pointer; font-size: 10px"
+                    (click)="
+                      productForm.patchValue({
+                        imageUrl: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400',
+                      })
+                    "
+                  >
+                    Click to use
+                  </span>
+                </small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Category</label>
+              <select class="form-select form-select-sm" formControlName="categoryId">
+                <option [ngValue]="null">-- Select Category --</option>
+                <option *ngFor="let c of categories" [ngValue]="c.categoryId">
+                  {{ c.name }}
+                </option>
+              </select>
+            </div>
+
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-dark btn-sm flex-grow-1">
+                {{ editMode ? 'Update Product' : 'Add Product' }}
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-sm"
+                *ngIf="editMode"
+                (click)="resetForm()"
+              >
+                Cancel
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- CSV Upload -->
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-header bg-secondary text-white fw-semibold small">Bulk Upload via CSV</div>
+        <div class="card-body">
+          <p class="text-muted small mb-2">
+            Format: Name, Description, Price, Stock, CategoryId, ImageUrl
+          </p>
+          <input
+            type="file"
+            class="form-control form-control-sm mb-2"
+            accept=".csv"
+            (change)="onCsvFileSelected($event)"
+          />
+          <button class="btn btn-outline-dark btn-sm w-100" (click)="uploadCsv()">
+            Upload CSV
+          </button>
+        </div>
+      </div>
+
+      <!-- Manage Categories -->
+      <div class="card border-0 shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span class="fw-semibold small">Manage Categories</span>
+          <button
+            class="btn btn-outline-dark btn-sm"
+            (click)="showCategoryPanel = !showCategoryPanel"
+          >
+            {{ showCategoryPanel ? 'Hide' : 'Show' }}
+          </button>
+        </div>
+        <div class="card-body" *ngIf="showCategoryPanel">
+          <form [formGroup]="categoryForm" (ngSubmit)="addCategory()" class="mb-3">
+            <div class="mb-2">
+              <input
+                class="form-control form-control-sm"
+                formControlName="name"
+                placeholder="Category name (e.g. Tables)"
+                [class.is-invalid]="
+                  categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched
+                "
+              />
+              <div class="invalid-feedback">Name is required.</div>
+            </div>
+            <div class="mb-2">
+              <input
+                class="form-control form-control-sm"
+                formControlName="description"
+                placeholder="Description (optional)"
+              />
+            </div>
+            <button type="submit" class="btn btn-dark btn-sm w-100">Add Category</button>
+          </form>
+
+          <table class="table table-sm table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of categories">
+                <td class="text-muted small">{{ c.categoryId }}</td>
+                <td>{{ c.name }}</td>
+                <td>
+                  <button
+                    class="btn btn-outline-danger btn-sm py-0 px-1"
+                    (click)="deleteCategory(c.categoryId!)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel: Products Table -->
+    <div class="col-md-8">
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Rating</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                *ngFor="let p of products"
+                [class.table-warning]="p.stock < 10 && p.stock > 0"
+                [class.table-danger]="p.stock === 0"
+              >
+                <td class="text-muted small">{{ p.productId }}</td>
+                <td>
+                  <img
+                    [src]="
+                      p.imageUrl && p.imageUrl.startsWith('http')
+                        ? p.imageUrl
+                        : 'https://placehold.co/50x50?text=No+Img'
+                    "
+                    width="45"
+                    height="45"
+                    style="object-fit: cover; border-radius: 4px"
+                  />
+                </td>
+                <td>{{ p.name }}</td>
+                <td>
+                  <span class="badge bg-secondary">
+                    {{ getCategoryName(p.categoryId) }}
+                  </span>
+                </td>
+                <td>₹{{ p.price }}</td>
+                <td>
+                  <span
+                    class="badge"
+                    [class.bg-success]="p.stock >= 10"
+                    [class.bg-warning]="p.stock < 10 && p.stock > 0"
+                    [class.bg-danger]="p.stock === 0"
+                  >
+                    {{ p.stock }}
+                  </span>
+                </td>
+                <td>{{ p.rating || 0 }}</td>
+                <td>
+                  <button class="btn btn-sm btn-outline-warning me-1" (click)="editProduct(p)">
+                    Edit
+                  </button>
+                  <button
+                    class="btn btn-sm btn-outline-danger"
+                    (click)="deleteProduct(p.productId!)"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

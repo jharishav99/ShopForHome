@@ -1,41 +1,75 @@
-<div class="container mt-4" *ngIf="product; else loading">
+<div class="container mt-4" *ngIf="loading">
+  <div class="text-center py-5">
+    <div class="spinner-border text-dark" role="status"></div>
+    <p class="mt-2 text-muted">Loading product...</p>
+  </div>
+</div>
+
+<div class="container mt-4" *ngIf="!loading && product">
+  <div
+    class="alert py-2"
+    [class.alert-success]="messageType === 'success'"
+    [class.alert-danger]="messageType === 'danger'"
+    [class.alert-warning]="messageType === 'warning'"
+    *ngIf="message"
+  >
+    {{ message }}
+  </div>
+
   <div class="row">
     <div class="col-md-5">
       <img
-        [src]="product.imageUrl || 'assets/images/placeholder.jpg'"
-        class="img-fluid rounded shadow"
+        [src]="
+          product.imageUrl && product.imageUrl.startsWith('http')
+            ? product.imageUrl
+            : 'https://placehold.co/400x400?text=' + product.name
+        "
+        class="img-fluid rounded shadow w-100"
+        style="max-height: 400px; object-fit: cover"
         [alt]="product.name"
       />
     </div>
     <div class="col-md-7">
-      <h2>{{ product.name }}</h2>
-      <p class="text-muted">{{ product.description }}</p>
-      <h3 class="text-success">₹{{ product.price }}</h3>
-      <p>⭐ Rating: {{ product.rating || 'N/A' }}</p>
-      <p>
-        Stock:
+      <nav aria-label="breadcrumb" class="mb-3">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+          <li class="breadcrumb-item"><a routerLink="/products">Products</a></li>
+          <li class="breadcrumb-item active">{{ product.name }}</li>
+        </ol>
+      </nav>
+
+      <h3 class="fw-bold">{{ product.name }}</h3>
+      <p class="text-muted small mb-1">
+        Category:
+        <span class="badge bg-dark">{{ product.category?.name || 'General' }}</span>
+      </p>
+      <p class="mt-2">{{ product.description }}</p>
+
+      <div class="d-flex align-items-center gap-3 mb-3">
+        <h4 class="text-success fw-bold mb-0">₹{{ product.price }}</h4>
+        <span class="text-muted small">
+          {{ product.rating ? 'Rating: ' + product.rating + ' / 5' : 'No rating yet' }}
+        </span>
+      </div>
+
+      <div class="mb-4">
         <span
-          class="badge"
+          class="badge fs-6"
           [class.bg-success]="product.stock > 10"
           [class.bg-warning]="product.stock <= 10 && product.stock > 0"
           [class.bg-danger]="product.stock === 0"
         >
-          {{ product.stock > 0 ? product.stock + ' available' : 'Out of Stock' }}
+          {{ product.stock > 0 ? 'In Stock (' + product.stock + ' available)' : 'Out of Stock' }}
         </span>
-      </p>
-      <div class="alert alert-success" *ngIf="message">{{ message }}</div>
-      <div class="d-flex gap-3 mt-3">
-        <button class="btn btn-dark btn-lg" (click)="addToCart()" [disabled]="product.stock === 0">
-          🛒 Add to Cart
+      </div>
+
+      <div class="d-flex gap-2">
+        <button class="btn btn-dark px-4" (click)="addToCart()" [disabled]="product.stock === 0">
+          Add to Cart
         </button>
-        <a routerLink="/products" class="btn btn-outline-secondary btn-lg">← Back</a>
+        <button class="btn btn-outline-danger" (click)="addToWishlist()">Wishlist</button>
+        <a routerLink="/products" class="btn btn-outline-secondary"> Back </a>
       </div>
     </div>
   </div>
 </div>
-<ng-template #loading>
-  <div class="container mt-5 text-center">
-    <div class="spinner-border text-dark" role="status"></div>
-    <p class="mt-2">Loading product...</p>
-  </div>
-</ng-template>

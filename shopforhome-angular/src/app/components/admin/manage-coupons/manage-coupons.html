@@ -1,64 +1,134 @@
-<div class="container mt-4">
-  <h2>🎟️ Manage Coupons</h2>
-  <div class="alert alert-success" *ngIf="message">{{ message }}</div>
-  <div class="row">
+<div class="container-fluid mt-4">
+  <h4 class="fw-semibold mb-4">Manage Coupons</h4>
+
+  <div
+    class="alert py-2"
+    [class.alert-success]="messageType === 'success'"
+    [class.alert-danger]="messageType === 'danger'"
+    *ngIf="message"
+  >
+    {{ message }}
+  </div>
+
+  <div class="row g-4">
+    <!-- Left Panel -->
     <div class="col-md-4">
-      <div class="card shadow">
-        <div class="card-header bg-dark text-white">➕ Create Coupon</div>
+      <!-- Create Coupon -->
+      <div class="card border-0 shadow-sm mb-3">
+        <div class="card-header bg-dark text-white fw-semibold">Create New Coupon</div>
         <div class="card-body">
           <form [formGroup]="couponForm" (ngSubmit)="onSubmit()">
             <div class="mb-2">
-              <label class="form-label">Coupon Code</label>
-              <input class="form-control" formControlName="code" placeholder="e.g. SAVE20" />
+              <label class="form-label small fw-semibold">Coupon Code *</label>
+              <input
+                class="form-control form-control-sm"
+                formControlName="code"
+                placeholder="e.g. SAVE20"
+                [class.is-invalid]="
+                  couponForm.get('code')?.invalid && couponForm.get('code')?.touched
+                "
+              />
+              <div class="invalid-feedback">Code is required.</div>
             </div>
             <div class="mb-2">
-              <label class="form-label">Discount %</label>
-              <input type="number" class="form-control" formControlName="discountPct" />
+              <label class="form-label small fw-semibold">Discount % *</label>
+              <input
+                type="number"
+                class="form-control form-control-sm"
+                formControlName="discountPct"
+                min="1"
+                max="100"
+                [class.is-invalid]="
+                  couponForm.get('discountPct')?.invalid && couponForm.get('discountPct')?.touched
+                "
+              />
+              <div class="invalid-feedback">Enter 1–100.</div>
             </div>
             <div class="mb-2">
-              <label class="form-label">Valid From</label>
-              <input type="date" class="form-control" formControlName="validFrom" />
+              <label class="form-label small fw-semibold">Valid From *</label>
+              <input type="date" class="form-control form-control-sm" formControlName="validFrom" />
             </div>
-            <div class="mb-2">
-              <label class="form-label">Valid To</label>
-              <input type="date" class="form-control" formControlName="validTo" />
+            <div class="mb-3">
+              <label class="form-label small fw-semibold">Valid To *</label>
+              <input type="date" class="form-control form-control-sm" formControlName="validTo" />
             </div>
-            <button type="submit" class="btn btn-dark w-100">Create Coupon</button>
+            <button type="submit" class="btn btn-dark btn-sm w-100">Create Coupon</button>
           </form>
         </div>
       </div>
+
+      <!-- Assign Coupon to User -->
+      <div class="card border-0 shadow-sm">
+        <div class="card-header bg-secondary text-white fw-semibold small">
+          Assign Coupon to Specific User
+        </div>
+        <div class="card-body">
+          <div class="mb-2">
+            <label class="form-label small fw-semibold">Select User</label>
+            <select class="form-select form-select-sm" [(ngModel)]="selectedUserId">
+              <option [ngValue]="null">-- Select User --</option>
+              <option *ngFor="let u of users" [ngValue]="u.userId">
+                {{ u.fullName }} ({{ u.email }})
+              </option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label small fw-semibold">Select Coupon</label>
+            <select class="form-select form-select-sm" [(ngModel)]="selectedCouponId">
+              <option [ngValue]="null">-- Select Coupon --</option>
+              <option *ngFor="let c of coupons" [ngValue]="c.couponId">
+                {{ c.code }} — {{ c.discountPct }}% off
+              </option>
+            </select>
+          </div>
+          <button class="btn btn-dark btn-sm w-100" (click)="assignCoupon()">
+            Assign Coupon to User
+          </button>
+        </div>
+      </div>
     </div>
+
+    <!-- Right Panel: Coupons Table -->
     <div class="col-md-8">
-      <table class="table table-hover shadow">
-        <thead class="table-dark">
-          <tr>
-            <th>Code</th>
-            <th>Discount</th>
-            <th>Valid From</th>
-            <th>Valid To</th>
-            <th>Active</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let c of coupons">
-            <td>
-              <strong>{{ c.code }}</strong>
-            </td>
-            <td>{{ c.discountPct }}%</td>
-            <td>{{ c.validFrom | date: 'shortDate' }}</td>
-            <td>{{ c.validTo | date: 'shortDate' }}</td>
-            <td>
-              <span
-                class="badge"
-                [class.bg-success]="c.isActive"
-                [class.bg-secondary]="!c.isActive"
-              >
-                {{ c.isActive ? 'Active' : 'Inactive' }}
-              </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="card border-0 shadow-sm">
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead class="table-dark">
+              <tr>
+                <th>Code</th>
+                <th>Discount</th>
+                <th>Valid From</th>
+                <th>Valid To</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of coupons">
+                <td>
+                  <strong>{{ c.code }}</strong>
+                </td>
+                <td>
+                  <span class="badge bg-success">{{ c.discountPct }}% OFF</span>
+                </td>
+                <td>{{ c.validFrom | date: 'dd MMM yyyy' }}</td>
+                <td>{{ c.validTo | date: 'dd MMM yyyy' }}</td>
+                <td>
+                  <span
+                    class="badge"
+                    [class.bg-success]="c.isActive"
+                    [class.bg-secondary]="!c.isActive"
+                  >
+                    {{ c.isActive ? 'Active' : 'Inactive' }}
+                  </span>
+                </td>
+              </tr>
+              <tr *ngIf="coupons.length === 0">
+                <td colspan="5" class="text-center text-muted py-3">No coupons created yet.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

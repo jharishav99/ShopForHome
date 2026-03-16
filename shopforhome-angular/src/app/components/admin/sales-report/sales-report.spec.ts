@@ -1,22 +1,27 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
+import { SalesReportComponent as SalesReportComponent } from './sales-report';
 
-import { SalesReport } from './sales-report';
-
-describe('SalesReport', () => {
-  let component: SalesReport;
-  let fixture: ComponentFixture<SalesReport>;
+describe('SalesReport Component', () => {
+  let component: SalesReportComponent;
+  let fixture: ComponentFixture<SalesReportComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SalesReport],
+      imports: [SalesReportComponent, HttpClientTestingModule, RouterTestingModule, FormsModule]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(SalesReport);
+    fixture = TestBed.createComponent(SalesReportComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should start with zero revenue', () => {
+    expect(component.totalRevenue).toBe(0);
   });
 });

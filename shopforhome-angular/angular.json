@@ -24,6 +24,7 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "polyfills": ["zone.js"],
             "assets": [
               {
                 "glob": "**/*",
@@ -31,15 +32,7 @@
               }
             ],
             "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "src/styles.scss"],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "security": {
-              "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
           },
           "configurations": {
             "production": {
@@ -63,7 +56,7 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular/build:dev-server",

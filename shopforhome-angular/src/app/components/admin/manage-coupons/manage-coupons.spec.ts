@@ -1,19 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ManageCoupons } from './manage-coupons';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ManageCouponsComponent } from './manage-coupons';
 
 describe('ManageCoupons', () => {
-  let component: ManageCoupons;
-  let fixture: ComponentFixture<ManageCoupons>;
+  let component: ManageCouponsComponent;
+  let fixture: ComponentFixture<ManageCouponsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageCoupons],
+      imports: [ManageCouponsComponent, HttpClientTestingModule, RouterTestingModule, ReactiveFormsModule]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(ManageCoupons);
+    fixture = TestBed.createComponent(ManageCouponsComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {

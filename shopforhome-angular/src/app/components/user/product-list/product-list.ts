@@ -61,11 +61,27 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  toggleWishlist(product: Product): void {
-    if (!this.authService.isLoggedIn()) { this.message = 'Please login first.'; return; }
-    const userId = this.authService.getUserId();
-    this.wishlistService.toggle({ userId, productId: product.productId! }).subscribe({
-      next: (res) => { this.message = res.status === 'added' ? 'Added to wishlist!' : 'Removed!'; setTimeout(() => this.message = '', 3000); }
-    });
+toggleWishlist(product: Product): void {
+  if (!this.authService.isLoggedIn()) {
+    this.message = 'Please login to use wishlist.';
+    return;
   }
+  // Backend reads userId from JWT token — send productId only
+  this.wishlistService.toggle({ 
+    userId: 0, 
+    productId: product.productId! 
+  }).subscribe({
+    next: (res) => {
+      this.message = res.status === 'added' ? 'Added to wishlist.' : 'Removed from wishlist.';
+      setTimeout(() => this.message = '', 3000);
+    },
+    error: () => {
+      this.message = 'Failed to update wishlist.';
+      setTimeout(() => this.message = '', 3000);
+    }
+  });
+}
+
+
+
 }

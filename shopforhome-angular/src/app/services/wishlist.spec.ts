@@ -1,13 +1,15 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { WishlistService } from './wishlist';
 
-import { Wishlist } from './wishlist';
-
-describe('Wishlist', () => {
-  let service: Wishlist;
+describe('WishlistService', () => {
+  let service: WishlistService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(Wishlist);
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule]
+    });
+    service = TestBed.inject(WishlistService);
   });
 
   it('should be created', () => {

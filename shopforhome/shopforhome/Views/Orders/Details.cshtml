@@ -1,0 +1,63 @@
+﻿@model Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd class="col-sm-10">
+            @* Safely access User.Email; User is non-nullable in your model *@
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        @* Conditional logic for Optional Coupons *@
+        @if (Model.Coupon != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Coupon!.Code)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Coupon!.Code)
+            </dd>
+        }
+        else
+        {
+            <dt class="col-sm-2">
+                Coupon
+            </dt>
+            <dd class="col-sm-10">
+                <span class="text-muted">No discount applied</span>
+            </dd>
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.OrderId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

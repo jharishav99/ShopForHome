@@ -11,7 +11,7 @@ import { CartService } from '../../../services/cart';
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
-export class NavbarComponent implements OnInit {
+export class Navbar implements OnInit {
   isLoggedIn = false;
   isAdmin = false;
   cartCount = 0;
@@ -22,7 +22,15 @@ export class NavbarComponent implements OnInit {
     this.authService.currentUser$.subscribe(user => {
       this.isLoggedIn = !!user;
       this.isAdmin = user?.role === 'Admin';
+      if (user) {
+        // Refresh actual cart count from backend for this user
+        this.cartService.refreshCount();
+      } else {
+        // Reset to 0 on logout
+        this.cartService.updateCount(0);
+      }
     });
+
     this.cartService.cartCount$.subscribe(count => this.cartCount = count);
   }
 

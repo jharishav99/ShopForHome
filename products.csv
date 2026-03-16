@@ -1,0 +1,4 @@
+Name,Description,Price,Stock,CategoryId,ImageUrl
+Wooden Table,Solid oak dining table,2500,10,1,assets/images/table.jpg
+Desk Lamp,LED adjustable lamp,800,100,2,assets/images/lamp.jpg
+Office Sofa,Leather 3-seater,5000,5,2,assets/images/sofa.jpg

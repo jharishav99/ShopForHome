@@ -7,7 +7,14 @@ import { Wishlist } from '../models/models';
 @Injectable({ providedIn: 'root' })
 export class WishlistService {
   private apiUrl = `${environment.apiUrl}/wishlist`;
+
   constructor(private http: HttpClient) {}
-  getWishlist(userId: number): Observable<Wishlist[]> { return this.http.get<Wishlist[]>(`${this.apiUrl}/${userId}`); }
-  toggle(item: { userId: number; productId: number }): Observable<any> { return this.http.post(this.apiUrl, item); }
+
+  getWishlist(userId: number): Observable<Wishlist[]> {
+    return this.http.get<Wishlist[]>(`${this.apiUrl}/${userId}`);
+  }
+
+  toggle(item: { userId: number; productId: number }): Observable<any> {
+    return this.http.post(this.apiUrl, item);
+  }
 }

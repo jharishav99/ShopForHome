@@ -1,22 +1,29 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ProductDetail } from './product-detail';
 
 describe('ProductDetail', () => {
-  let component: ProductDetail;
-  let fixture: ComponentFixture<ProductDetail>;
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ProductDetail],
+      imports: [ProductDetail, RouterTestingModule, HttpClientTestingModule]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(ProductDetail);
-    component = fixture.componentInstance;
-    await fixture.whenStable();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    const fixture = TestBed.createComponent(ProductDetail);
+    expect(fixture.componentInstance).toBeTruthy();
+  });
+
+  it('should start with null product', () => {
+    const fixture = TestBed.createComponent(ProductDetail);
+    const component = fixture.componentInstance;
+    expect(component.product).toBeNull();
+  });
+
+  it('should start with loading true', () => {
+    const fixture = TestBed.createComponent(ProductDetail);
+    const component = fixture.componentInstance;
+    expect(component.loading).toBeTruthy();
   });
 });

@@ -1,22 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ManageUsers } from './manage-users';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { ManageUsersComponent} from './manage-users';
 
 describe('ManageUsers', () => {
-  let component: ManageUsers;
-  let fixture: ComponentFixture<ManageUsers>;
+  let component: ManageUsersComponent;
+  let fixture: ComponentFixture<ManageUsersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ManageUsers],
+      imports: [ManageUsersComponent, HttpClientTestingModule, RouterTestingModule]
     }).compileComponents();
-
-    fixture = TestBed.createComponent(ManageUsers);
+    fixture = TestBed.createComponent(ManageUsersComponent);
     component = fixture.componentInstance;
-    await fixture.whenStable();
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should start with empty users list', () => {
+    expect(component.users.length).toBe(0);
   });
 });

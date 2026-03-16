@@ -18,11 +18,30 @@ export class CartService {
       tap(items => this.cartCountSubject.next(items.length))
     );
   }
+
   addToCart(item: { productId: number; quantity: number }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/add`, item);
+    return this.http.post(`${this.apiUrl}/add`, item).pipe(
+      tap(() => {
+        const current = this.cartCountSubject.value;
+        this.cartCountSubject.next(current + 1);
+      })
+    );
   }
+
   removeFromCart(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`).pipe(
+      tap(() => {
+        const current = this.cartCountSubject.value;
+        this.cartCountSubject.next(Math.max(0, current - 1));
+      })
+    );
   }
-  updateCount(count: number): void { this.cartCountSubject.next(count); }
+
+  refreshCount(): void {
+    this.getCart().subscribe();
+  }
+
+  updateCount(count: number): void {
+    this.cartCountSubject.next(count);
+  }
 }

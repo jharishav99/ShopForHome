@@ -22,11 +22,11 @@ export const routes: Routes = [
   },
   {
     path: 'products/:id',
-    loadComponent: () => import('./components/user/product-detail/product-detail').then(m => m.ProductDetailComponent)
+    loadComponent: () => import('./components/user/product-detail/product-detail').then(m => m.ProductDetail)
   },
   {
     path: 'cart',
-    loadComponent: () => import('./components/user/cart/cart').then(m => m.CartComponent),
+    loadComponent: () => import('./components/user/cart/cart').then(m => m.Cart),
     canActivate: [authGuard]
   },
   {
@@ -40,6 +40,11 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'my-coupons',
+    loadComponent: () => import('./components/user/my-coupons/my-coupons').then(m => m.MyCoupons),
+    canActivate: [authGuard]
+  },
+  {
     path: 'admin',
     canActivate: [adminGuard],
     children: [
@@ -50,7 +55,7 @@ export const routes: Routes = [
       },
       {
         path: 'products',
-        loadComponent: () => import('./components/admin/manage-products/manage-products').then(m => m.ManageProductsComponent)
+        loadComponent: () => import('./components/admin/manage-products/manage-products').then(m => m.ManageProducts)
       },
       {
         path: 'users',
@@ -58,7 +63,7 @@ export const routes: Routes = [
       },
       {
         path: 'orders',
-        loadComponent: () => import('./components/admin/manage-orders/manage-orders').then(m => m.ManageOrdersComponent)
+        loadComponent: () => import('./components/admin/manage-orders/manage-orders').then(m => m.ManageOrders)
       },
       {
         path: 'coupons',

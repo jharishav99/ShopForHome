@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <h4 class="fw-semibold mb-4">My Coupons</h4>
+
+  <div class="text-center py-3" *ngIf="loading">
+    <div class="spinner-border text-dark" role="status"></div>
+  </div>
+
+  <div class="row" *ngIf="!loading && coupons.length > 0">
+    <div class="col-md-4 mb-3" *ngFor="let uc of coupons">
+      <div class="card border-0 shadow-sm h-100" [class.opacity-50]="uc.isUsed">
+        <div class="card-body text-center py-4">
+          <div class="display-6 mb-2">🎟️</div>
+          <h5 class="fw-bold text-dark">{{ uc.coupon?.code || 'COUPON' }}</h5>
+          <div class="badge bg-success fs-6 mb-2 px-3">{{ uc.coupon?.discountPct }}% OFF</div>
+          <p class="text-muted small mb-1">
+            Valid: {{ uc.coupon?.validFrom | date: 'dd MMM' }} —
+            {{ uc.coupon?.validTo | date: 'dd MMM yyyy' }}
+          </p>
+          <span class="badge mt-1" [class.bg-warning]="!uc.isUsed" [class.bg-secondary]="uc.isUsed">
+            {{ uc.isUsed ? 'Already Used' : 'Available to Use' }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center py-5 text-muted" *ngIf="!loading && coupons.length === 0">
+    <p class="fs-5">No coupons assigned to you yet.</p>
+    <small>Coupons are assigned by admin during promotions and sales events.</small>
+    <br />
+    <a routerLink="/products" class="btn btn-dark btn-sm mt-3"> Browse Products </a>
+  </div>
+</div>
