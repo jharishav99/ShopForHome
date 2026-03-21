@@ -13,7 +13,7 @@ import { Product } from '../../../models/models';
   standalone: true,
   imports: [CommonModule, FormsModule, RouterLink],
   templateUrl: './product-list.html',
-  styleUrl: './product-list.scss'
+  styleUrl: './product-list.css'
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];

@@ -1,1 +1,72 @@
-<p>stock-management works!</p>
+<div class="container mt-4">
+  <h2>Stock Management</h2>
+
+  <!-- Out of stock alert -->
+  <div
+    class="alert alert-danger d-flex align-items-center mb-3"
+    *ngIf="outOfStockProducts.length > 0"
+  >
+    <strong>Out of Stock Alert:</strong>&nbsp; {{ outOfStockProducts.length }} product(s) are
+    completely out of stock.
+  </div>
+
+  <!-- Low stock alert -->
+  <div
+    class="alert alert-warning d-flex align-items-center mb-3"
+    *ngIf="lowStockProducts.length > 0"
+  >
+    <strong>Low Stock Alert:</strong>&nbsp; {{ lowStockProducts.length }} product(s) have fewer than
+    10 units remaining.
+  </div>
+
+  <!-- No issues message -->
+  <div
+    class="alert alert-success mb-3"
+    *ngIf="products.length > 0 && lowStockProducts.length === 0 && outOfStockProducts.length === 0"
+  >
+    All products have adequate stock levels.
+  </div>
+
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-0">
+      <table class="table table-hover mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let p of products"
+            [class.table-danger]="getStockStatus(p.stock) === 'danger'"
+            [class.table-warning]="getStockStatus(p.stock) === 'warning'"
+          >
+            <td class="text-muted small">{{ p.productId }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.category?.name || '-' }}</td>
+            <td>₹{{ p.price }}</td>
+            <td>
+              <strong>{{ p.stock }}</strong>
+            </td>
+            <td>
+              <span
+                class="badge"
+                [class.bg-success]="getStockStatus(p.stock) === 'success'"
+                [class.bg-warning]="getStockStatus(p.stock) === 'warning'"
+                [class.bg-danger]="getStockStatus(p.stock) === 'danger'"
+                [class.text-dark]="getStockStatus(p.stock) === 'warning'"
+              >
+                {{ p.stock === 0 ? 'Out of Stock' : p.stock < 10 ? 'Low Stock' : 'In Stock' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -3,44 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\couponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\couponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\usercouponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\usercouponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\wishlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\usercoupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\usercoupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\coupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\coupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +39,20 @@
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\data\\shopforhomedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\data\\shopforhomedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\wishlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\usercouponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\usercouponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\searchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,12 +63,52 @@
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\reportscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\couponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\couponscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\api\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\api\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\controllers\\admin\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\controllers\\admin\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\models\\usercoupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\models\\usercoupon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\migrations\\20260314182547_adduseridtocartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\migrations\\20260314182547_adduseridtocartitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|c:\\users\\sljha\\onedrive\\desktop\\capstone_project\\shopforhome\\shopforhome\\shopforhome\\migrations\\20260321141436_addconstraints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEF5BE7E-F5C8-D277-5D51-40537506F05F}|shopforhome\\shopforhome.csproj|solutionrelative:shopforhome\\migrations\\20260321141436_addconstraints.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -90,24 +118,193 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Wishlist.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Wishlist.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\Wishlist.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Wishlist.cs",
+              "RelativeToolTip": "shopforhome\\Models\\Wishlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:14:43.59Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "shopforhome\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:14:40.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T18:14:30.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShopForHomeDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Data\\ShopForHomeDbContext.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Data\\ShopForHomeDbContext.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Data\\ShopForHomeDbContext.cs",
+              "RelativeToolTip": "shopforhome\\Data\\ShopForHomeDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:50:11.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\Cart.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Cart.cs",
+              "RelativeToolTip": "shopforhome\\Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T18:24:40.815Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\CartItem.cs",
+              "RelativeToolTip": "shopforhome\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T18:24:43.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\OrderItem.cs",
+              "RelativeToolTip": "shopforhome\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T17:11:27.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\User.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\User.cs",
+              "RelativeToolTip": "shopforhome\\Models\\User.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwBYAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:11:30.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Program.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Program.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Program.cs",
+              "RelativeToolTip": "shopforhome\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:04:01.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\appsettings.json",
+              "RelativeDocumentMoniker": "shopforhome\\appsettings.json",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\appsettings.json",
+              "RelativeToolTip": "shopforhome\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-14T08:34:39.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "UserCouponsController.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\UserCouponsController.cs",
               "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\UserCouponsController.cs",
               "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\UserCouponsController.cs",
               "RelativeToolTip": "shopforhome\\Controllers\\API\\UserCouponsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-16T09:39:06.412Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
+              "Title": "SearchController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\SearchController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\SearchController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\SearchController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\API\\SearchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-15T16:49:30.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReportsController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\ReportsController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\ReportsController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\ReportsController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\API\\ReportsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:14:32.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CouponsController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CouponsController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\CouponsController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CouponsController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\API\\CouponsController.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAuwBYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:14:18.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Coupon.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Coupon.cs",
               "RelativeDocumentMoniker": "shopforhome\\Models\\Coupon.cs",
@@ -120,94 +317,134 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CartController.cs",
               "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\CartController.cs",
               "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CartController.cs",
               "RelativeToolTip": "shopforhome\\Controllers\\API\\CartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGIAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAIwFAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:20:43.432Z"
+              "WhenOpened": "2026-03-14T12:20:43.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\UsersController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\UsersController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\UsersController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\UsersController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAcwEkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:18:09.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\ProductsController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\ProductsController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\ProductsController.cs",
+              "ViewState": "AgIAAK8AAAAAAAAAAAAYwHMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:13:01.415Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Cart.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Cart.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Models\\Cart.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Cart.cs",
-              "RelativeToolTip": "shopforhome\\Models\\Cart.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "WishlistController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\WishlistController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\WishlistController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\WishlistController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\API\\WishlistController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:24:40.815Z"
+              "WhenOpened": "2026-03-14T12:21:30.894Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CartItem.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\CartItem.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Models\\CartItem.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\CartItem.cs",
-              "RelativeToolTip": "shopforhome\\Models\\CartItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:24:43.055Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\CategoriesController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\CategoriesController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAcwD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:15:51.77Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 19,
               "Title": "OrdersController.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\OrdersController.cs",
               "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\OrdersController.cs",
               "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\OrdersController.cs",
               "RelativeToolTip": "shopforhome\\Controllers\\Admin\\OrdersController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAA6wFsAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAcwAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-14T12:13:02.207Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 20,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\CategoriesController.cs",
+              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\CategoriesController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T12:15:51.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\AuthController.cs",
               "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\AuthController.cs",
               "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\AuthController.cs",
               "RelativeToolTip": "shopforhome\\Controllers\\Admin\\AuthController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAMwEQAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-14T13:55:49.242Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CouponsController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CouponsController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\CouponsController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\CouponsController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\API\\CouponsController.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAAGUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 22,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Order.cs",
+              "RelativeToolTip": "shopforhome\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:14:18.709Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-21T14:39:21.524Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 26,
+              "Title": "20260321141436_AddConstraints.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Migrations\\20260321141436_AddConstraints.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Migrations\\20260321141436_AddConstraints.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Migrations\\20260321141436_AddConstraints.cs",
+              "RelativeToolTip": "shopforhome\\Migrations\\20260321141436_AddConstraints.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:14:36.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "shopforhome\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Product.cs",
+              "RelativeToolTip": "shopforhome\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-14T18:28:37.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "UserCoupon.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\UserCoupon.cs",
               "RelativeDocumentMoniker": "shopforhome\\Models\\UserCoupon.cs",
@@ -215,109 +452,11 @@
               "RelativeToolTip": "shopforhome\\Models\\UserCoupon.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T09:32:12.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-16T09:32:12.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ShopForHomeDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Data\\ShopForHomeDbContext.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Data\\ShopForHomeDbContext.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Data\\ShopForHomeDbContext.cs",
-              "RelativeToolTip": "shopforhome\\Data\\ShopForHomeDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T16:50:11.024Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\ProductsController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\ProductsController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\ProductsController.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAwwKIAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:13:01.415Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\appsettings.json",
-              "RelativeDocumentMoniker": "shopforhome\\appsettings.json",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\appsettings.json",
-              "RelativeToolTip": "shopforhome\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-03-14T08:34:39.939Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\UsersController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\Admin\\UsersController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\Admin\\UsersController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\Admin\\UsersController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAcwEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:18:09.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "WishlistController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\WishlistController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\WishlistController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\WishlistController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\API\\WishlistController.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAmwEUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:21:30.894Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Program.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Program.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Program.cs",
-              "RelativeToolTip": "shopforhome\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:04:01.866Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "SearchController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\SearchController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\SearchController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\SearchController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\API\\SearchController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-15T16:49:30.605Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ReportsController.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\ReportsController.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Controllers\\API\\ReportsController.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Controllers\\API\\ReportsController.cs",
-              "RelativeToolTip": "shopforhome\\Controllers\\API\\ReportsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T12:14:32.442Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "20260314182547_AddUserIdToCartItems.cs",
               "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Migrations\\20260314182547_AddUserIdToCartItems.cs",
               "RelativeDocumentMoniker": "shopforhome\\Migrations\\20260314182547_AddUserIdToCartItems.cs",
@@ -326,18 +465,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-14T18:25:47.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "shopforhome\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\sljha\\OneDrive\\Desktop\\capstone_project\\ShopForHome\\shopforhome\\shopforhome\\Models\\Product.cs",
-              "RelativeToolTip": "shopforhome\\Models\\Product.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-14T18:28:37.66Z"
             }
           ]
         }

@@ -1,46 +1,122 @@
-<div class="container mt-4">
-  <h2>👥 Manage Users</h2>
-  <div class="alert alert-success" *ngIf="message">{{ message }}</div>
-  <table class="table table-hover shadow">
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Full Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Status</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.userId }}</td>
-        <td>{{ user.fullName }}</td>
-        <td>{{ user.email }}</td>
-        <td>
-          <span
-            class="badge"
-            [class.bg-danger]="user.role === 'Admin'"
-            [class.bg-primary]="user.role !== 'Admin'"
-          >
-            {{ user.role }}
-          </span>
-        </td>
-        <td>
-          <span
-            class="badge"
-            [class.bg-success]="user.isActive"
-            [class.bg-secondary]="!user.isActive"
-          >
-            {{ user.isActive ? 'Active' : 'Inactive' }}
-          </span>
-        </td>
-        <td>
-          <button class="btn btn-sm btn-danger" (click)="deleteUser(user.userId!)">
-            🗑️ Delete
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-fluid mt-4">
+  <h4 class="fw-semibold mb-4">Manage Users</h4>
+
+  <div
+    class="alert py-2"
+    [class.alert-success]="messageType === 'success'"
+    [class.alert-danger]="messageType === 'danger'"
+    *ngIf="message"
+  >
+    {{ message }}
+  </div>
+
+  <!-- Add New User Form -->
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-dark text-white fw-semibold">Add New User</div>
+    <div class="card-body">
+      <form [formGroup]="userForm" (ngSubmit)="createUser()">
+        <div class="row g-2">
+          <div class="col-md-3">
+            <label class="form-label small fw-semibold">Full Name *</label>
+            <input
+              class="form-control form-control-sm"
+              formControlName="fullName"
+              placeholder="Full name"
+              [class.is-invalid]="
+                userForm.get('fullName')?.invalid && userForm.get('fullName')?.touched
+              "
+            />
+            <div class="invalid-feedback">Min 3 characters.</div>
+          </div>
+          <div class="col-md-3">
+            <label class="form-label small fw-semibold">Email *</label>
+            <input
+              type="email"
+              class="form-control form-control-sm"
+              formControlName="email"
+              placeholder="Email address"
+              [class.is-invalid]="userForm.get('email')?.invalid && userForm.get('email')?.touched"
+            />
+            <div class="invalid-feedback">Valid email required.</div>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label small fw-semibold">Password *</label>
+            <input
+              type="password"
+              class="form-control form-control-sm"
+              formControlName="passwordHash"
+              placeholder="Password"
+              [class.is-invalid]="
+                userForm.get('passwordHash')?.invalid && userForm.get('passwordHash')?.touched
+              "
+            />
+            <div class="invalid-feedback">Min 5 characters.</div>
+          </div>
+          <div class="col-md-2">
+            <label class="form-label small fw-semibold">Role</label>
+            <select class="form-select form-select-sm" formControlName="role">
+              <option value="User">User</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+          <div class="col-md-2 d-flex align-items-end">
+            <button type="submit" class="btn btn-dark btn-sm w-100">Add User</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Users Table -->
+  <div class="card border-0 shadow-sm">
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover mb-0">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td class="text-muted small">{{ user.userId }}</td>
+              <td>{{ user.fullName }}</td>
+              <td>{{ user.email }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [class.bg-danger]="user.role === 'Admin'"
+                  [class.bg-primary]="user.role !== 'Admin'"
+                >
+                  {{ user.role }}
+                </span>
+              </td>
+              <td>
+                <span
+                  class="badge"
+                  [class.bg-success]="user.isActive"
+                  [class.bg-secondary]="!user.isActive"
+                >
+                  {{ user.isActive ? 'Active' : 'Inactive' }}
+                </span>
+              </td>
+              <td>
+                <button class="btn btn-sm btn-outline-danger" (click)="deleteUser(user.userId!)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr *ngIf="users.length === 0">
+              <td colspan="6" class="text-center text-muted py-3">No users found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

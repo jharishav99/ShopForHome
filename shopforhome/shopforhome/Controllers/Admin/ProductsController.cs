@@ -174,8 +174,8 @@ namespace shopforhome.Controllers.Admin
             if (file == null || file.Length == 0)
                 return BadRequest(new { message = "No file uploaded." });
 
-            // Save to wwwroot/images folder
-            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "images");
+             //save to wwwroot/assets/images as per project instructions
+            var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets", "images");
 
             if (!Directory.Exists(uploadsFolder))
                 Directory.CreateDirectory(uploadsFolder);
@@ -188,8 +188,8 @@ namespace shopforhome.Controllers.Admin
                 await file.CopyToAsync(stream);
             }
 
-            // Return the URL that Angular can use
-            var imageUrl = $"https://localhost:7213/images/{fileName}";
+            //URL now points to /assets/images/
+            var imageUrl = $"https://localhost:7213/assets/images/{fileName}";
             return Ok(new { imageUrl });
         }
         private bool ProductExists(int id)

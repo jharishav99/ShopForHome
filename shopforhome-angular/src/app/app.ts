@@ -8,7 +8,7 @@ import { FooterComponent } from './components/shared/footer/footer';
   standalone: true,
   imports: [RouterOutlet, Navbar, FooterComponent],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.css'
 })
 export class App {
   protected readonly title = 'shopforhome-angular';

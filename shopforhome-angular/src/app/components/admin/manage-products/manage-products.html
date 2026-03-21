@@ -298,70 +298,72 @@
     <div class="col-md-8">
       <div class="card border-0 shadow-sm">
         <div class="card-body p-0">
-          <table class="table table-hover mb-0">
-            <thead class="table-dark">
-              <tr>
-                <th>ID</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Rating</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                *ngFor="let p of products"
-                [class.table-warning]="p.stock < 10 && p.stock > 0"
-                [class.table-danger]="p.stock === 0"
-              >
-                <td class="text-muted small">{{ p.productId }}</td>
-                <td>
-                  <img
-                    [src]="
-                      p.imageUrl && p.imageUrl.startsWith('http')
-                        ? p.imageUrl
-                        : 'https://placehold.co/50x50?text=No+Img'
-                    "
-                    width="45"
-                    height="45"
-                    style="object-fit: cover; border-radius: 4px"
-                  />
-                </td>
-                <td>{{ p.name }}</td>
-                <td>
-                  <span class="badge bg-secondary">
-                    {{ getCategoryName(p.categoryId) }}
-                  </span>
-                </td>
-                <td>₹{{ p.price }}</td>
-                <td>
-                  <span
-                    class="badge"
-                    [class.bg-success]="p.stock >= 10"
-                    [class.bg-warning]="p.stock < 10 && p.stock > 0"
-                    [class.bg-danger]="p.stock === 0"
-                  >
-                    {{ p.stock }}
-                  </span>
-                </td>
-                <td>{{ p.rating || 0 }}</td>
-                <td>
-                  <button class="btn btn-sm btn-outline-warning me-1" (click)="editProduct(p)">
-                    Edit
-                  </button>
-                  <button
-                    class="btn btn-sm btn-outline-danger"
-                    (click)="deleteProduct(p.productId!)"
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Rating</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr
+                  *ngFor="let p of products"
+                  [class.table-warning]="p.stock < 10 && p.stock > 0"
+                  [class.table-danger]="p.stock === 0"
+                >
+                  <td class="text-muted small">{{ p.productId }}</td>
+                  <td>
+                    <img
+                      [src]="
+                        p.imageUrl && p.imageUrl.startsWith('http')
+                          ? p.imageUrl
+                          : 'https://placehold.co/50x50?text=No+Img'
+                      "
+                      width="45"
+                      height="45"
+                      style="object-fit: cover; border-radius: 4px"
+                    />
+                  </td>
+                  <td>{{ p.name }}</td>
+                  <td>
+                    <span class="badge bg-secondary">
+                      {{ getCategoryName(p.categoryId) }}
+                    </span>
+                  </td>
+                  <td>₹{{ p.price }}</td>
+                  <td>
+                    <span
+                      class="badge"
+                      [class.bg-success]="p.stock >= 10"
+                      [class.bg-warning]="p.stock < 10 && p.stock > 0"
+                      [class.bg-danger]="p.stock === 0"
+                    >
+                      {{ p.stock }}
+                    </span>
+                  </td>
+                  <td>{{ p.rating || 0 }}</td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-warning me-1" (click)="editProduct(p)">
+                      Edit
+                    </button>
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      (click)="deleteProduct(p.productId!)"
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

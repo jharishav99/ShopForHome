@@ -13,7 +13,9 @@ describe('App', () => {
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
+    fixture.detectChanges();
     expect(app).toBeTruthy();
+    fixture.destroy();
   });
 
   it('should render navbar', () => {
@@ -21,5 +23,6 @@ describe('App', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('app-navbar')).toBeTruthy();
+    fixture.destroy();
   });
 });

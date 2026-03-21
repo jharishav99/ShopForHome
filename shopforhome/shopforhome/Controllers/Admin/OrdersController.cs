@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using shopforhome.Data;
 using shopforhome.Models;
+using System.Security.Claims;
 
 namespace shopforhome.Controllers.Admin
 {
@@ -62,19 +63,47 @@ namespace shopforhome.Controllers.Admin
         // Any logged in user - place order
         [HttpPost]
         [Authorize]
-        public async Task<IActionResult> PlaceOrder([FromBody] Order order)
+        public async Task<IActionResult> PlaceOrder([FromBody] PlaceOrderRequest request)
         {
-            if (order == null) return BadRequest();
-            order.OrderDate = DateTime.Now;
-            order.Status = "Pending";
-            order.PaymentStatus = "Pending";
-            _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
-            return Ok(new
+            // Get userId from JWT token
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            if (userIdClaim == null) return Unauthorized();
+            int userId = int.Parse(userIdClaim.Value);
+
+            // Fetch cart items from DB for this user
+            var cartItems = await _context.CartItems
+                .Include(c => c.Product)
+                .Where(c => c.UserId == userId)
+                .ToListAsync();
+
+            if (!cartItems.Any())
+                return BadRequest(new { message = "Cart is empty" });
+
+            // Build order from cart items
+            var order = new Order
             {
-                message = "Order placed successfully",
-                orderId = order.OrderId
-            });
+                UserId = userId,
+                TotalAmount = request.TotalAmount,
+                OrderDate = DateTime.Now,
+                Status = "Pending",
+                PaymentStatus = "Pending",
+                CouponId = request.CouponId,
+                OrderItems = cartItems.Select(c => new OrderItem
+                {
+                    ProductId = c.ProductId,
+                    Qty = c.Quantity,
+                    UnitPrice = c.Product.Price
+                }).ToList()
+            };
+
+            _context.Orders.Add(order);
+
+            // Clear the cart after placing order
+            _context.CartItems.RemoveRange(cartItems);
+
+            await _context.SaveChangesAsync();
+
+            return Ok(new { message = "Order placed successfully", orderId = order.OrderId });
         }
 
         // Admin only - update status
@@ -88,5 +117,11 @@ namespace shopforhome.Controllers.Admin
             await _context.SaveChangesAsync();
             return Ok(new { message = "Status updated" });
         }
+    }
+
+    public class PlaceOrderRequest
+    {
+        public decimal TotalAmount { get; set; }
+        public int? CouponId { get; set; }
     }
 }

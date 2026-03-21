@@ -68,7 +68,8 @@ export class ManageCouponsComponent implements OnInit {
   }
 
   assignCoupon(): void {
-    if (!this.selectedUserId || !this.selectedCouponId) {
+    // ✅ FIXED: use === null instead of falsy check so ID=0 doesn't trigger warning
+    if (this.selectedUserId === null || this.selectedCouponId === null) {
       this.showMsg('Please select both a user and a coupon.', 'danger');
       return;
     }

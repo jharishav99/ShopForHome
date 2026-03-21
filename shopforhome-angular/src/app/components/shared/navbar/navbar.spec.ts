@@ -12,18 +12,25 @@ describe('Navbar', () => {
 
   it('should create', () => {
     const fixture = TestBed.createComponent(Navbar);
-    expect(fixture.componentInstance).toBeTruthy();
+    const component = fixture.componentInstance;
+    fixture.detectChanges();
+    expect(component).toBeTruthy();
+    fixture.destroy(); // ← manually destroy to prevent cleanup error
   });
 
   it('should show login link when not logged in', () => {
     const fixture = TestBed.createComponent(Navbar);
     const component = fixture.componentInstance;
+    fixture.detectChanges();
     expect(component.isLoggedIn).toBeFalsy();
+    fixture.destroy();
   });
 
   it('should not show admin link when not admin', () => {
     const fixture = TestBed.createComponent(Navbar);
     const component = fixture.componentInstance;
+    fixture.detectChanges();
     expect(component.isAdmin).toBeFalsy();
+    fixture.destroy();
   });
 });

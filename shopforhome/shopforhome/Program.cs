@@ -81,8 +81,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-
-// MIDDLEWARE ORDER MATTERS: Routing -> CORS -> Auth -> Authorization
 app.UseCors("AllowAngular");
 app.UseAuthentication();
 app.UseAuthorization();

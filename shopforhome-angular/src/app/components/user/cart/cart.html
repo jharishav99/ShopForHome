@@ -1,7 +1,6 @@
 <div class="container mt-4">
   <h4 class="fw-semibold mb-4">Shopping Cart</h4>
 
-  <!-- Message -->
   <div
     class="alert py-2"
     [class.alert-success]="messageType === 'success'"
@@ -11,7 +10,7 @@
     {{ message }}
   </div>
 
-  <!-- Order Placed Success Screen -->
+  <!-- Order Success -->
   <div class="text-center py-5" *ngIf="orderPlaced">
     <div class="mb-3" style="font-size: 3rem">&#10003;</div>
     <h4 class="fw-bold">Order Placed Successfully!</h4>
@@ -20,7 +19,7 @@
     <a routerLink="/orders" class="btn btn-outline-dark">View My Orders</a>
   </div>
 
-  <!-- Loading Spinner -->
+  <!-- Loading -->
   <div class="text-center py-4" *ngIf="loading && !orderPlaced">
     <div class="spinner-border text-dark" role="status"></div>
     <p class="mt-2 text-muted small">Loading cart...</p>
@@ -29,72 +28,111 @@
   <!-- Cart Content -->
   <div *ngIf="!loading && !orderPlaced">
     <div *ngIf="cartItems.length > 0; else emptyCart">
-      <table class="table table-hover">
-        <thead class="table-dark">
-          <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of cartItems">
-            <td>
-              <div class="d-flex align-items-center gap-2">
-                <img
-                  [src]="
-                    item.product?.imageUrl && item.product?.imageUrl?.startsWith('http')
-                      ? item.product?.imageUrl
-                      : 'https://placehold.co/50x50?text=No+Img'
-                  "
-                  width="50"
-                  height="50"
-                  style="object-fit: cover; border-radius: 6px"
+      <!-- Cart Table -->
+      <div class="table-responsive">
+        <table class="table table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Subtotal</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of cartItems">
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <img
+                    [src]="
+                      item.product?.imageUrl && item.product?.imageUrl?.startsWith('http')
+                        ? item.product?.imageUrl
+                        : 'https://placehold.co/50x50?text=No+Img'
+                    "
+                    width="50"
+                    height="50"
+                    style="object-fit: cover; border-radius: 6px"
+                  />
+                  <span class="fw-semibold">{{ item.product?.name }}</span>
+                </div>
+              </td>
+              <td>₹{{ item.product?.price }}</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <button class="btn btn-sm btn-outline-secondary" (click)="decreaseQty(item)">
+                    −
+                  </button>
+                  <span class="fw-bold px-1">{{ item.quantity }}</span>
+                  <button class="btn btn-sm btn-outline-secondary" (click)="increaseQty(item)">
+                    +
+                  </button>
+                </div>
+              </td>
+              <td class="fw-semibold">₹{{ (item.product?.price || 0) * item.quantity }}</td>
+              <td>
+                <button class="btn btn-outline-danger btn-sm" (click)="removeItem(item)">
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Coupon Section -->
+      <div class="card border-0 shadow-sm mt-3 mb-3">
+        <div class="card-body">
+          <label class="form-label small fw-semibold">Apply Discount Coupon</label>
+          <div class="row g-2 align-items-start">
+            <div class="col-md-4">
+              <div class="input-group input-group-sm">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="couponCode"
+                  placeholder="Enter coupon code e.g. SAVE20"
+                  [class.is-invalid]="couponError"
+                  [class.is-valid]="discount > 0"
                 />
-                <span class="fw-semibold">{{ item.product?.name }}</span>
+                <button class="btn btn-outline-dark" (click)="applyCoupon()">Apply</button>
               </div>
-            </td>
-            <td>₹{{ item.product?.price }}</td>
-            <td>
-              <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-sm btn-outline-secondary" (click)="decreaseQty(item)">
-                  −
-                </button>
-                <span class="fw-bold px-1">{{ item.quantity }}</span>
-                <button class="btn btn-sm btn-outline-secondary" (click)="increaseQty(item)">
-                  +
-                </button>
+              <div class="text-danger small mt-1" *ngIf="couponError">
+                {{ couponError }}
               </div>
-            </td>
-            <td class="fw-semibold">₹{{ (item.product?.price || 0) * item.quantity }}</td>
-            <td>
-              <button class="btn btn-outline-danger btn-sm" (click)="removeItem(item)">
-                Remove
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+              <div class="text-success small mt-1" *ngIf="discount > 0">
+                Coupon applied! {{ discount }}% discount
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Order Summary -->
       <div class="card border-0 shadow-sm mt-3">
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-md-8">
-              <div class="d-flex gap-4">
+              <div class="d-flex gap-4 flex-wrap">
                 <div>
                   <span class="text-muted small">Items</span>
                   <div class="fw-semibold">{{ cartItems.length }}</div>
                 </div>
-                <div>
+                <div *ngIf="discount === 0">
                   <span class="text-muted small">Total Amount</span>
                   <div class="fs-4 fw-bold text-success">₹{{ total }}</div>
                 </div>
+                <div *ngIf="discount > 0">
+                  <span class="text-muted small">Original</span>
+                  <div class="text-decoration-line-through text-muted">₹{{ total }}</div>
+                </div>
+                <div *ngIf="discount > 0">
+                  <span class="text-muted small"> After {{ discount }}% Discount </span>
+                  <div class="fs-4 fw-bold text-success">₹{{ getFinalTotal() }}</div>
+                </div>
               </div>
             </div>
-            <div class="col-md-4 text-end">
+            <div class="col-md-4 text-end mt-2 mt-md-0">
               <button class="btn btn-dark btn-lg px-5" (click)="checkout()">Place Order</button>
             </div>
           </div>
@@ -102,11 +140,10 @@
       </div>
     </div>
 
-    <!-- Empty Cart -->
     <ng-template #emptyCart>
       <div class="text-center py-5 text-muted">
         <p class="fs-5">Your cart is empty.</p>
-        <a routerLink="/products" class="btn btn-dark mt-2"> Browse Products </a>
+        <a routerLink="/products" class="btn btn-dark mt-2">Browse Products</a>
       </div>
     </ng-template>
   </div>

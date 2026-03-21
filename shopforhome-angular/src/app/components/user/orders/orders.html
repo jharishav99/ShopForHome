@@ -1,5 +1,64 @@
 <div class="container mt-4">
   <h2>📋 My Orders</h2>
-  <p class="text-muted">Your order history will appear here once you place an order.</p>
-  <a routerLink="/products" class="btn btn-dark">Continue Shopping</a>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center mt-5">
+    <div class="spinner-border" role="status"></div>
+    <p class="mt-2 text-muted">Loading your orders...</p>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="error && !loading" class="alert alert-danger">{{ error }}</div>
+
+  <!-- Empty -->
+  <div *ngIf="!loading && !error && orders.length === 0" class="text-center mt-5">
+    <p class="text-muted fs-5">You haven't placed any orders yet.</p>
+    <a routerLink="/products" class="btn btn-dark mt-2">Start Shopping</a>
+  </div>
+
+  <!-- Orders List -->
+  <div *ngIf="!loading && orders.length > 0">
+    <div class="card mb-4 shadow-sm" *ngFor="let order of orders">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Order #{{ order.orderId }}</strong>
+          <span class="text-muted ms-3">{{ order.orderDate | date: 'dd MMM yyyy' }}</span>
+        </div>
+        <span [class]="getStatusClass(order.status)">{{ order.status }}</span>
+      </div>
+
+      <div class="card-body">
+        <!-- Order Items -->
+        <table class="table table-sm mb-3">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Qty</th>
+              <th>Unit Price</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of order.orderItems">
+              <td>{{ item.product?.name || 'Product' }}</td>
+              <td>{{ item.qty }}</td>
+              <td>₹{{ item.unitPrice }}</td>
+              <td>₹{{ item.qty * item.unitPrice }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Total & Payment -->
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <span class="text-muted">Payment Status: </span>
+            <strong>{{ order.paymentStatus }}</strong>
+          </div>
+          <div class="fs-5">
+            <strong>Total: ₹{{ order.totalAmount }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

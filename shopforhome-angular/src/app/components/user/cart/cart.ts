@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../../services/cart';
 import { AuthService } from '../../../services/auth';
@@ -10,7 +11,7 @@ import { environment } from '../../../environments/environment';
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './cart.html'
 })
 export class Cart implements OnInit {
@@ -20,6 +21,11 @@ export class Cart implements OnInit {
   messageType = 'success';
   loading = true;
   orderPlaced = false;
+
+  couponCode = '';
+  discount = 0;
+  couponError = '';
+  appliedCouponId: number | null = null;
 
   constructor(
     private cartService: CartService,
@@ -52,10 +58,7 @@ export class Cart implements OnInit {
   }
 
   decreaseQty(item: CartItem): void {
-    if (item.quantity <= 1) {
-      this.removeItem(item);
-      return;
-    }
+    if (item.quantity <= 1) { this.removeItem(item); return; }
     this.cartService.removeFromCart(item.cartItemId!).subscribe(() => {
       this.cartService.addToCart({
         productId: item.productId,
@@ -80,6 +83,41 @@ export class Cart implements OnInit {
     this.cartService.updateCount(this.cartItems.length);
   }
 
+  applyCoupon(): void {
+    if (!this.couponCode.trim()) {
+      this.couponError = 'Please enter a coupon code.';
+      return;
+    }
+    const userId = this.authService.getUserId();
+    this.http.get<any[]>(`${environment.apiUrl}/coupons/${userId}`).subscribe({
+      next: (userCoupons) => {
+        const match = userCoupons.find(
+          uc => uc.coupon?.code?.toUpperCase() === this.couponCode.toUpperCase()
+            && uc.coupon?.isActive === true
+            && !uc.isUsed
+        );
+        if (match) {
+          this.discount = match.coupon.discountPct;
+          this.appliedCouponId = match.coupon.couponId;
+          this.couponError = '';
+          // ✅ ADDED: success message showing discount %
+          this.showMsg(`Coupon applied! You save ${match.coupon.discountPct}%`, 'success');
+        } else {
+          this.couponError = 'Invalid or expired coupon code.';
+          this.discount = 0;
+          this.appliedCouponId = null;
+        }
+      },
+      error: () => {
+        this.couponError = 'Could not verify coupon. Try again.';
+      }
+    });
+  }
+
+  getFinalTotal(): number {
+    return Math.round(this.total - (this.total * this.discount / 100));
+  }
+
   checkout(): void {
     if (!this.authService.isLoggedIn()) {
       this.showMsg('Please login to place an order.', 'danger');
@@ -89,26 +127,18 @@ export class Cart implements OnInit {
       this.showMsg('Your cart is empty.', 'danger');
       return;
     }
-
-    const userId = this.authService.getUserId();
+    const finalAmount = this.discount > 0 ? this.getFinalTotal() : this.total;
     const order = {
-      userId: userId,
-      totalAmount: this.total,
-      orderDate: new Date(),
-      status: 'Pending',
-      paymentStatus: 'Pending'
+      totalAmount: finalAmount,
+      couponId: this.appliedCouponId ?? null
     };
-
     this.http.post(`${environment.apiUrl}/orders`, order).subscribe({
       next: () => {
         this.orderPlaced = true;
-        this.showMsg('Order placed successfully! Thank you for shopping.', 'success');
-        // Clear cart items from DB
-        const removeAll = this.cartItems.map(item =>
-          this.cartService.removeFromCart(item.cartItemId!)
-        );
         this.cartItems = [];
         this.total = 0;
+        this.discount = 0;
+        this.appliedCouponId = null;
         this.cartService.updateCount(0);
       },
       error: () => this.showMsg('Failed to place order. Try again.', 'danger')
