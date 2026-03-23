@@ -19,7 +19,6 @@ namespace shopforhome.Controllers.API
             _context = context;
         }
 
-        // GET: api/wishlist/{userId}
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetWishlist(int userId)
         {
@@ -30,11 +29,9 @@ namespace shopforhome.Controllers.API
             return Ok(wishlistItems);
         }
 
-        // POST: api/wishlist
         [HttpPost]
         public async Task<IActionResult> ToggleWishlist([FromBody] WishlistRequest request)
         {
-            // Always use userId from JWT token for security
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null) return Unauthorized();
             int userId = int.Parse(userIdClaim.Value);

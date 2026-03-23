@@ -41,7 +41,6 @@ namespace ShopForHome.Controllers.API
             if (userIdClaim == null) return Unauthorized();
             int userId = int.Parse(userIdClaim.Value);
 
-            // Check if item already exists in cart
             var existing = await _context.CartItems
                 .FirstOrDefaultAsync(x => x.ProductId == request.ProductId && x.UserId == userId);
 
@@ -51,7 +50,6 @@ namespace ShopForHome.Controllers.API
             }
             else
             {
-                // Get or create cart for user
                 var cart = await _context.Carts
                     .FirstOrDefaultAsync(c => c.UserId == userId);
 

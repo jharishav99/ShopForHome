@@ -10,7 +10,7 @@
     {{ message }}
   </div>
 
-  <!-- Order Success -->
+  
   <div class="text-center py-5" *ngIf="orderPlaced">
     <div class="mb-3" style="font-size: 3rem">&#10003;</div>
     <h4 class="fw-bold">Order Placed Successfully!</h4>
@@ -19,16 +19,16 @@
     <a routerLink="/orders" class="btn btn-outline-dark">View My Orders</a>
   </div>
 
-  <!-- Loading -->
+  
   <div class="text-center py-4" *ngIf="loading && !orderPlaced">
     <div class="spinner-border text-dark" role="status"></div>
     <p class="mt-2 text-muted small">Loading cart...</p>
   </div>
 
-  <!-- Cart Content -->
+  
   <div *ngIf="!loading && !orderPlaced">
     <div *ngIf="cartItems.length > 0; else emptyCart">
-      <!-- Cart Table -->
+      
       <div class="table-responsive">
         <table class="table table-hover">
           <thead class="table-dark">
@@ -80,7 +80,7 @@
         </table>
       </div>
 
-      <!-- Coupon Section -->
+      
       <div class="card border-0 shadow-sm mt-3 mb-3">
         <div class="card-body">
           <label class="form-label small fw-semibold">Apply Discount Coupon</label>
@@ -108,7 +108,7 @@
         </div>
       </div>
 
-      <!-- Order Summary -->
+      
       <div class="card border-0 shadow-sm mt-3">
         <div class="card-body">
           <div class="row align-items-center">
@@ -148,3 +148,4 @@
     </ng-template>
   </div>
 </div>
+

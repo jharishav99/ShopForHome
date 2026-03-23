@@ -11,9 +11,9 @@
   </div>
 
   <div class="row g-4">
-    <!-- Left Panel -->
+    
     <div class="col-md-4">
-      <!-- Product Form -->
+      
       <div class="card border-0 shadow-sm mb-3">
         <div class="card-header bg-dark text-white fw-semibold">
           {{ editMode ? 'Edit Product' : 'Add New Product' }}
@@ -89,11 +89,11 @@
               />
             </div>
 
-            <!-- Image Section -->
+            
             <div class="mb-2">
               <label class="form-label small fw-semibold">Product Image</label>
 
-              <!-- Image Preview -->
+              
               <div class="mb-2" *ngIf="imagePreview">
                 <img
                   [src]="imagePreview"
@@ -108,7 +108,7 @@
                 />
               </div>
 
-              <!-- URL Input -->
+              
               <input
                 class="form-control form-control-sm mb-1"
                 formControlName="imageUrl"
@@ -118,7 +118,7 @@
                 Paste a URL above — or upload a file below
               </small>
 
-              <!-- File Upload -->
+              
               <div class="input-group input-group-sm">
                 <input
                   type="file"
@@ -129,7 +129,7 @@
               </div>
               <div class="text-muted small mt-1" *ngIf="uploadingImage">Uploading image...</div>
 
-              <!-- Suggested free image URLs -->
+              
               <div class="mt-2">
                 <small class="text-muted fw-semibold">Quick image URLs:</small><br />
                 <small class="text-muted">
@@ -214,7 +214,7 @@
         </div>
       </div>
 
-      <!-- CSV Upload -->
+      
       <div class="card border-0 shadow-sm mb-3">
         <div class="card-header bg-secondary text-white fw-semibold small">Bulk Upload via CSV</div>
         <div class="card-body">
@@ -233,7 +233,7 @@
         </div>
       </div>
 
-      <!-- Manage Categories -->
+      
       <div class="card border-0 shadow-sm">
         <div class="card-header d-flex justify-content-between align-items-center">
           <span class="fw-semibold small">Manage Categories</span>
@@ -294,7 +294,7 @@
       </div>
     </div>
 
-    <!-- Right Panel: Products Table -->
+    
     <div class="col-md-8">
       <div class="card border-0 shadow-sm">
         <div class="card-body p-0">
@@ -369,3 +369,4 @@
     </div>
   </div>
 </div>
+

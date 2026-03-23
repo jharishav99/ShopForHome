@@ -24,7 +24,6 @@ namespace shopforhome.Controllers.Admin
             _context = context;
         }
 
-        // GET: api/Products - Public
         [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetProducts()
@@ -36,7 +35,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(products);
         }
 
-        // GET: api/Products/5 - Public
         [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
@@ -49,7 +47,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(product);
         }
 
-        // POST: api/Products - Admin only
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] Product product)
         {
@@ -60,7 +57,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(product);
         }
 
-        // PUT: api/Products/5 - Admin only
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] Product product)
         {
@@ -80,7 +76,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(new { message = "Update successful" });
         }
 
-        // DELETE: api/Products/5 - Admin only
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -92,7 +87,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(new { message = "Product deleted" });
         }
 
-        // POST: api/Products/UploadCsv - Admin only
         [HttpPost("UploadCsv")]
         public async Task<IActionResult> UploadCsv(IFormFile file)
         {
@@ -137,7 +131,6 @@ namespace shopforhome.Controllers.Admin
             return BadRequest(new { message = "No valid data found in CSV." });
         }
 
-        // GET: api/Products/search - Public
         [AllowAnonymous]
         [HttpGet("search")]
         public async Task<IActionResult> Search(
@@ -167,14 +160,12 @@ namespace shopforhome.Controllers.Admin
 
             return Ok(await products.ToListAsync());
         }
-        // POST: api/Products/UploadImage
         [HttpPost("UploadImage")]
         public async Task<IActionResult> UploadImage(IFormFile file)
         {
             if (file == null || file.Length == 0)
                 return BadRequest(new { message = "No file uploaded." });
 
-             //save to wwwroot/assets/images as per project instructions
             var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "assets", "images");
 
             if (!Directory.Exists(uploadsFolder))
@@ -188,7 +179,6 @@ namespace shopforhome.Controllers.Admin
                 await file.CopyToAsync(stream);
             }
 
-            //URL now points to /assets/images/
             var imageUrl = $"https://localhost:7213/assets/images/{fileName}";
             return Ok(new { imageUrl });
         }

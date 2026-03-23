@@ -17,7 +17,7 @@ export class Navbar implements OnInit, OnDestroy {
   isAdmin = false;
   cartCount = 0;
 
-  // Declare subscriptions — needed for OnDestroy cleanup
+
   private authSub!: Subscription;
   private cartSub!: Subscription;
 
@@ -46,7 +46,7 @@ export class Navbar implements OnInit, OnDestroy {
     this.authService.logout();
   }
 
-  // Cleanup subscriptions — prevents memory leaks
+
   ngOnDestroy(): void {
     this.authSub.unsubscribe();
     this.cartSub.unsubscribe();

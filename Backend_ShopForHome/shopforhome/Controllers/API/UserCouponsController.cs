@@ -17,7 +17,6 @@ namespace shopforhome.Controllers.API
             _context = context;
         }
 
-        // GET: api/UserCoupons/{userId}
         [HttpGet("{userId}")]
         public async Task<IActionResult> GetUserCoupons(int userId)
         {

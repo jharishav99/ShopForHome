@@ -10,7 +10,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) {}
 
-  // ─── Users ───────────────────────────────────────
+ 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(`${this.apiUrl}/users`);
   }
@@ -31,7 +31,7 @@ export class AdminService {
     return this.http.delete(`${this.apiUrl}/users/${id}`);
   }
 
-  // ─── Coupons ─────────────────────────────────────
+  
   getCoupons(): Observable<Coupon[]> {
     return this.http.get<Coupon[]>(`${this.apiUrl}/coupons`);
   }
@@ -40,7 +40,7 @@ export class AdminService {
     return this.http.post(`${this.apiUrl}/coupons`, coupon);
   }
 
-  // Assign coupon to specific user
+ 
   assignCoupon(userId: number, couponId: number): Observable<any> {
     return this.http.post(
       `${this.apiUrl}/coupons/assign`,
@@ -48,7 +48,7 @@ export class AdminService {
     );
   }
 
-  // ─── Orders ──────────────────────────────────────
+ 
   getOrders(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/orders`);
   }
@@ -61,12 +61,12 @@ export class AdminService {
     );
   }
 
-  // ─── Sales Report ────────────────────────────────
+  
   getSalesReport(): Observable<SalesReport[]> {
     return this.http.get<SalesReport[]>(`${this.apiUrl}/reports/sales`);
   }
 
-  // ─── Categories ──────────────────────────────────
+  
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(`${this.apiUrl}/categories`);
   }

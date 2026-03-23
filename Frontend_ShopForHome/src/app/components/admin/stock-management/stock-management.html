@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <h2>Stock Management</h2>
 
-  <!-- Out of stock alert -->
+  
   <div
     class="alert alert-danger d-flex align-items-center mb-3"
     *ngIf="outOfStockProducts.length > 0"
@@ -10,7 +10,7 @@
     completely out of stock.
   </div>
 
-  <!-- Low stock alert -->
+  
   <div
     class="alert alert-warning d-flex align-items-center mb-3"
     *ngIf="lowStockProducts.length > 0"
@@ -19,7 +19,7 @@
     10 units remaining.
   </div>
 
-  <!-- No issues message -->
+  
   <div
     class="alert alert-success mb-3"
     *ngIf="products.length > 0 && lowStockProducts.length === 0 && outOfStockProducts.length === 0"
@@ -70,3 +70,4 @@
     </div>
   </div>
 </div>
+

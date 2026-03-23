@@ -15,7 +15,7 @@ describe('Navbar', () => {
     const component = fixture.componentInstance;
     fixture.detectChanges();
     expect(component).toBeTruthy();
-    fixture.destroy(); // ← manually destroy to prevent cleanup error
+    fixture.destroy();
   });
 
   it('should show login link when not logged in', () => {

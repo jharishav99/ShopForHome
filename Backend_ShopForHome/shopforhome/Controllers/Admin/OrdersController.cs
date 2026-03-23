@@ -18,7 +18,6 @@ namespace shopforhome.Controllers.Admin
             _context = context;
         }
 
-        // Admin only - see all orders
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
@@ -32,7 +31,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(orders);
         }
 
-        // Admin only - see specific order
         [HttpGet("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetById(int id)
@@ -46,7 +44,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(order);
         }
 
-        // Any logged in user - see own orders
         [HttpGet("user/{userId}")]
         [Authorize]
         public async Task<IActionResult> GetByUser(int userId)
@@ -60,17 +57,14 @@ namespace shopforhome.Controllers.Admin
             return Ok(orders);
         }
 
-        // Any logged in user - place order
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> PlaceOrder([FromBody] PlaceOrderRequest request)
         {
-            // Get userId from JWT token
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             if (userIdClaim == null) return Unauthorized();
             int userId = int.Parse(userIdClaim.Value);
 
-            // Fetch cart items from DB for this user
             var cartItems = await _context.CartItems
                 .Include(c => c.Product)
                 .Where(c => c.UserId == userId)
@@ -79,7 +73,6 @@ namespace shopforhome.Controllers.Admin
             if (!cartItems.Any())
                 return BadRequest(new { message = "Cart is empty" });
 
-            // Build order from cart items
             var order = new Order
             {
                 UserId = userId,
@@ -98,7 +91,6 @@ namespace shopforhome.Controllers.Admin
 
             _context.Orders.Add(order);
 
-            // Clear the cart after placing order
             _context.CartItems.RemoveRange(cartItems);
 
             await _context.SaveChangesAsync();
@@ -106,7 +98,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(new { message = "Order placed successfully", orderId = order.OrderId });
         }
 
-        // Admin only - update status
         [HttpPut("{id}/status")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateStatus(int id, [FromBody] string status)

@@ -72,7 +72,6 @@ namespace shopforhome.Controllers
             if (string.IsNullOrEmpty(user.Role))
                 user.Role = "User";
 
-            // Set required defaults so DB doesn't reject nulls
             user.CreatedAt = DateTime.Now;
             user.IsActive = true;
 

@@ -3,7 +3,7 @@
 
   <div class="alert alert-info py-2" *ngIf="message">{{ message }}</div>
 
-  <!-- Filters -->
+  
   <div class="bg-light border rounded p-3 mb-4">
     <div class="row g-2 align-items-end">
       <div class="col-md-3">
@@ -78,10 +78,10 @@
     </div>
   </div>
 
-  <!-- Results count -->
+  
   <p class="text-muted small mb-3">Showing {{ filteredProducts.length }} product(s)</p>
 
-  <!-- Product Grid -->
+  
   <div class="row" *ngIf="filteredProducts.length > 0; else noProducts">
     <div class="col-md-3 mb-4" *ngFor="let product of filteredProducts">
       <div class="card h-100 border-0 shadow-sm">
@@ -152,3 +152,4 @@
     </div>
   </ng-template>
 </div>
+

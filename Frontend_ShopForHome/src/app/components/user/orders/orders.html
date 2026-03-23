@@ -1,22 +1,22 @@
 <div class="container mt-4">
   <h2>📋 My Orders</h2>
 
-  <!-- Loading -->
+  
   <div *ngIf="loading" class="text-center mt-5">
     <div class="spinner-border" role="status"></div>
     <p class="mt-2 text-muted">Loading your orders...</p>
   </div>
 
-  <!-- Error -->
+  
   <div *ngIf="error && !loading" class="alert alert-danger">{{ error }}</div>
 
-  <!-- Empty -->
+  
   <div *ngIf="!loading && !error && orders.length === 0" class="text-center mt-5">
     <p class="text-muted fs-5">You haven't placed any orders yet.</p>
     <a routerLink="/products" class="btn btn-dark mt-2">Start Shopping</a>
   </div>
 
-  <!-- Orders List -->
+  
   <div *ngIf="!loading && orders.length > 0">
     <div class="card mb-4 shadow-sm" *ngFor="let order of orders">
       <div class="card-header d-flex justify-content-between align-items-center">
@@ -28,7 +28,7 @@
       </div>
 
       <div class="card-body">
-        <!-- Order Items -->
+        
         <table class="table table-sm mb-3">
           <thead>
             <tr>
@@ -48,7 +48,7 @@
           </tbody>
         </table>
 
-        <!-- Total & Payment -->
+        
         <div class="d-flex justify-content-between align-items-center">
           <div>
             <span class="text-muted">Payment Status: </span>
@@ -62,3 +62,4 @@
     </div>
   </div>
 </div>
+

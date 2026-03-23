@@ -17,7 +17,6 @@ namespace shopforhome.Controllers.Admin
             _context = context;
         }
 
-        // GET: api/Coupons — Admin only
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
@@ -26,7 +25,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(coupons);
         }
 
-        // GET: api/Coupons/{userId} — Logged in user
         [HttpGet("{userId}")]
         [Authorize]
         public async Task<IActionResult> GetUserCoupons(int userId)
@@ -38,7 +36,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(coupons);
         }
 
-        // POST: api/Coupons — Admin only
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] Coupon coupon)
@@ -50,7 +47,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(coupon);
         }
 
-        // PUT: api/Coupons/{id} — Admin only
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] Coupon coupon)
@@ -66,7 +62,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(existing);
         }
 
-        // DELETE: api/Coupons/{id} — Admin only
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
@@ -78,7 +73,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(new { message = "Deleted" });
         }
 
-        // POST: api/Coupons/assign — Admin only
         [HttpPost("assign")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> AssignToUser([FromBody] AssignCouponRequest request)

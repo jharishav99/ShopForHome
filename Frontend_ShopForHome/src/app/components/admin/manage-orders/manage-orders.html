@@ -3,7 +3,7 @@
 
   <div class="alert py-2 alert-success" *ngIf="message">{{ message }}</div>
 
-  <!-- Filters -->
+  
   <div class="bg-light border rounded p-3 mb-4">
     <div class="row g-2">
       <div class="col-md-4">
@@ -41,17 +41,17 @@
     </div>
   </div>
 
-  <!-- Loading -->
+  
   <div class="text-center py-4" *ngIf="loading">
     <div class="spinner-border text-dark" role="status"></div>
   </div>
 
-  <!-- No orders -->
+  
   <div class="text-center py-5 text-muted" *ngIf="!loading && filtered.length === 0">
     <p>No orders found.</p>
   </div>
 
-  <!-- Orders Table -->
+  
   <div class="card border-0 shadow-sm" *ngIf="!loading && filtered.length > 0">
     <div class="card-body p-0">
       <div class="table-responsive">
@@ -109,3 +109,4 @@
     </div>
   </div>
 </div>
+

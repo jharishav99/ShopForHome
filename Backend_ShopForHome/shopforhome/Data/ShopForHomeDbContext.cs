@@ -23,22 +23,18 @@ namespace shopforhome.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Product Price
             modelBuilder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasColumnType("decimal(18,2)");
 
-            // Order Total
             modelBuilder.Entity<Order>()
                 .Property(o => o.TotalAmount)
                 .HasColumnType("decimal(18,2)");
 
-            // Order Item Snapshot Price
             modelBuilder.Entity<OrderItem>()
                 .Property(oi => oi.UnitPrice)
                 .HasColumnType("decimal(18,2)");
 
-            // Coupon Discount Percentage
             modelBuilder.Entity<Coupon>()
                 .Property(c => c.DiscountPct)
                 .HasColumnType("decimal(18,2)");

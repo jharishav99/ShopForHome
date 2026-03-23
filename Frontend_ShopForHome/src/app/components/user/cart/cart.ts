@@ -100,7 +100,7 @@ export class Cart implements OnInit {
           this.discount = match.coupon.discountPct;
           this.appliedCouponId = match.coupon.couponId;
           this.couponError = '';
-          // ✅ ADDED: success message showing discount %
+
           this.showMsg(`Coupon applied! You save ${match.coupon.discountPct}%`, 'success');
         } else {
           this.couponError = 'Invalid or expired coupon code.';

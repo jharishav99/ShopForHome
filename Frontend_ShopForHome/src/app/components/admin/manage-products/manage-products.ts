@@ -49,7 +49,7 @@ export class ManageProducts implements OnInit {
       description: ['']
     });
 
-    // Watch imageUrl field changes to update preview
+   
     this.productForm.get('imageUrl')?.valueChanges.subscribe(url => {
       this.imagePreview = url || '';
     });
@@ -134,12 +134,12 @@ export class ManageProducts implements OnInit {
     }
   }
 
-  // Upload image file to backend → get URL back → set in form
+ 
   uploadImage(event: any): void {
     const file = event.target.files[0];
     if (!file) return;
 
-    // Validate file type
+   
     if (!file.type.startsWith('image/')) {
       this.showMsg('Please select an image file.', 'danger');
       return;
@@ -159,14 +159,14 @@ export class ManageProducts implements OnInit {
         this.showMsg('Image uploaded successfully.', 'success');
       },
       error: () => {
-        // Fallback: use local assets path
+       
         this.uploadingImage = false;
         this.showMsg('Upload failed. Use an image URL instead.', 'danger');
       }
     });
   }
 
-  // CSV bulk upload
+  
   onCsvFileSelected(e: any): void {
     this.selectedCsvFile = e.target.files[0];
   }

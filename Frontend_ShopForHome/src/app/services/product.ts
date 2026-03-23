@@ -22,3 +22,5 @@ export class ProductService {
     return this.http.post(`${this.apiUrl}/uploadcsv`, fd);
   }
 }
+
+

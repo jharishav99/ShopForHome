@@ -66,7 +66,7 @@ toggleWishlist(product: Product): void {
     this.message = 'Please login to use wishlist.';
     return;
   }
-  // Backend reads userId from JWT token — send productId only
+
   this.wishlistService.toggle({ 
     userId: 0, 
     productId: product.productId! 

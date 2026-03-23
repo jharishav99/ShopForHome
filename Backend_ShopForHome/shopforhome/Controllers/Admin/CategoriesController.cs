@@ -17,7 +17,6 @@ namespace shopforhome.Controllers.Admin
             _context = context;
         }
 
-        // GET: api/Categories — Public, anyone can view categories
         [HttpGet]
         [AllowAnonymous]
         public async Task<IActionResult> GetAll()
@@ -26,7 +25,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(categories);
         }
 
-        // GET: api/Categories/5 — Public
         [HttpGet("{id}")]
         [AllowAnonymous]
         public async Task<IActionResult> GetById(int id)
@@ -36,7 +34,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(category);
         }
 
-        // POST: api/Categories — Admin only
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([FromBody] Category category)
@@ -50,7 +47,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(category);
         }
 
-        // PUT: api/Categories/5 — Admin only
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id, [FromBody] Category category)
@@ -66,7 +62,6 @@ namespace shopforhome.Controllers.Admin
             return Ok(existing);
         }
 
-        // DELETE: api/Categories/5 — Admin only
         [HttpDelete("{id}")]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)
@@ -74,7 +69,6 @@ namespace shopforhome.Controllers.Admin
             var category = await _context.Categories.FindAsync(id);
             if (category == null) return NotFound();
 
-            // Check if any products use this category
             var hasProducts = await _context.Products
                 .AnyAsync(p => p.CategoryId == id);
 

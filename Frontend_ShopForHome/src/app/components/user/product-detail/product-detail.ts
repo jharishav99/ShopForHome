@@ -58,9 +58,9 @@ export class ProductDetail implements OnInit {
       return;
     }
     if (!this.product) return;
-    // Send only productId — backend reads userId from JWT
+
     this.wishlistService.toggle({ 
-      userId: 0,  // ignored by backend, uses JWT
+      userId: 0,
       productId: this.product.productId! 
     }).subscribe({
       next: (res) => this.showMsg(
